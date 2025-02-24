@@ -104,9 +104,9 @@ export default function Tank() {
           i.name !== "Envase e rotulagem" && i.name !== "Controle de produtos",
       );
     }
-    return activityListItems.filter(
-      (i) => i.name !== "Envase e rotulagem" && i.name !== "Nova Remessa",
-    );
+    if ((content as string).toLowerCase() === "pé de cuba")
+      return activityListItems.filter((i) => i.name !== "Envase e rotulagem");
+    return activityListItems.filter((i) => i.name !== "Nova Remessa");
   }
 
   return (
